@@ -53,9 +53,27 @@ public class RekapNilai {
 
             System.out.println("  Grade " + grade + " — " + keterangan);
 
+            total += nilai;
+            jumlahSah++;
             nomor++;
         } while (true);
 
+        System.out.println();
+
+        System.out.println("Nilai sah   : " + jumlahSah);
+
+        double rata = 0;
+
+        if (jumlahSah > 0) {
+            rata = total / jumlahSah;
+        }
+
+        System.out.println("Rata-rata   : " + String.format("%.2f", rata));
+
+        String status = rata >= 60 ? "LULUS" : "TIDAK LULUS";
+
+        System.out.println("Status      : " + status);
         scanner.close();
     }
 }
+
